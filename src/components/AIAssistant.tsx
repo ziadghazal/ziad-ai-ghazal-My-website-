@@ -144,7 +144,7 @@ const AIAssistant = () => {
 
       {/* Chat Window */}
       {isOpen && (
-        <Card className="fixed bottom-6 right-6 w-[420px] h-[650px] shadow-glow border-primary/30 flex flex-col z-50 bg-card animate-fade-in">
+        <Card className="fixed bottom-6 right-6 w-[380px] h-[550px] shadow-glow border-primary/30 flex flex-col z-50 bg-card animate-fade-in">
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border bg-gradient-to-r from-primary/20 to-cyan-400/20 backdrop-blur-sm">
             <div className="flex items-center gap-3">

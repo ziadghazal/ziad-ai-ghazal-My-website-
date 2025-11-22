@@ -110,31 +110,30 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Profile Image */}
+          {/* Right Column - AI Visualization */}
           <div className="relative animate-fade-in animation-delay-400 flex justify-center lg:justify-end">
-            <div className="relative w-96 h-96">
-              {/* Outer Glow Ring */}
-              <div className="absolute -inset-4 bg-gradient-to-r from-primary/30 via-cyan-400/30 to-primary/30 rounded-full blur-2xl animate-pulse" />
-              
-              {/* Middle Ring */}
-              <div className="absolute -inset-2 bg-gradient-to-r from-primary/40 to-cyan-400/40 rounded-full blur-xl" />
-              
-              {/* Inner Border */}
-              <div className="absolute inset-0 rounded-full border-4 border-primary/30 backdrop-blur-sm" />
-              
-              {/* Image */}
-              <img 
-                src={ziadPhoto} 
-                alt="Ziad Hesham Ghazal - AI Expert"
-                className="relative rounded-full shadow-2xl w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-              
-              {/* Floating Tech Icons */}
-              <div className="absolute -top-4 -right-4 w-16 h-16 bg-card/80 backdrop-blur-sm rounded-full border border-primary/30 flex items-center justify-center shadow-glow animate-float">
-                <Brain className="w-8 h-8 text-primary" />
+            <div className="relative w-96 h-96 flex items-center justify-center">
+              {/* Animated AI Circles */}
+              <div className="absolute inset-0">
+                <div className="absolute inset-0 border-2 border-primary/30 rounded-full animate-pulse" />
+                <div className="absolute inset-8 border-2 border-cyan-400/30 rounded-full animate-pulse" style={{ animationDelay: '0.5s' }} />
+                <div className="absolute inset-16 border-2 border-primary/20 rounded-full animate-pulse" style={{ animationDelay: '1s' }} />
               </div>
-              <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-card/80 backdrop-blur-sm rounded-full border border-cyan-400/30 flex items-center justify-center shadow-glow animate-float" style={{ animationDelay: '1s' }}>
+              
+              {/* Central AI Icon */}
+              <div className="relative z-10 w-32 h-32 bg-gradient-to-br from-primary/20 to-cyan-400/20 backdrop-blur-sm rounded-full border-4 border-primary/30 flex items-center justify-center shadow-glow animate-float">
+                <Brain className="w-16 h-16 text-primary" />
+              </div>
+              
+              {/* Orbiting Icons */}
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-16 bg-card/80 backdrop-blur-sm rounded-full border border-primary/30 flex items-center justify-center shadow-glow animate-float">
+                <Sparkles className="w-8 h-8 text-primary" />
+              </div>
+              <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-16 bg-card/80 backdrop-blur-sm rounded-full border border-cyan-400/30 flex items-center justify-center shadow-glow animate-float" style={{ animationDelay: '1s' }}>
                 <Zap className="w-8 h-8 text-cyan-400" />
+              </div>
+              <div className="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 bg-card/80 backdrop-blur-sm rounded-full border border-primary/30 flex items-center justify-center shadow-glow animate-float" style={{ animationDelay: '0.5s' }}>
+                <Code className="w-8 h-8 text-primary" />
               </div>
             </div>
           </div>

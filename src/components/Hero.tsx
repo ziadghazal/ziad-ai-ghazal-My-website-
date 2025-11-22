@@ -90,13 +90,16 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column - Logo */}
+          {/* Right Column - Profile Image */}
           <div className="relative animate-fade-in animation-delay-400 flex justify-center lg:justify-start">
-            <img 
-              src={ziadLogo} 
-              alt="Ziad Ghazal Logo"
-              className="w-80 h-80 object-contain drop-shadow-2xl"
-            />
+            <div className="relative w-80 h-80">
+              <div className="absolute -inset-2 bg-gradient-to-r from-primary/30 to-cyan-400/30 rounded-full blur-xl" />
+              <img 
+                src={ziadPhoto} 
+                alt="Ziad Hesham Ghazal"
+                className="relative rounded-full shadow-2xl border-4 border-primary/20 w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>

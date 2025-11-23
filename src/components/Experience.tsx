@@ -1,8 +1,11 @@
 import { Card } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Briefcase, Calendar, MapPin, Sparkles, Brain, CheckCircle2 } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Experience = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   const experiences = [
     {
       title: "Freelance Data Analyst & AI Consultant",
@@ -53,7 +56,7 @@ const Experience = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className={`text-center mb-16 space-y-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-cyan-400/20 border border-primary/30 backdrop-blur-sm mb-4">
             <Briefcase className="w-5 h-5 text-primary animate-pulse" />
             <span className="text-sm font-medium">Professional Journey</span>

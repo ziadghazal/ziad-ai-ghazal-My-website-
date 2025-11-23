@@ -1,7 +1,10 @@
 import { Award, CheckCircle } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Certifications = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   const certifications = [
     {
       title: "Master Artificial Intelligence",
@@ -68,7 +71,7 @@ const Certifications = () => {
       <div className="absolute top-20 right-20 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
       
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
+        <div className={`text-center mb-16 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center gap-2 bg-primary/10 px-4 py-2 rounded-full mb-4">
             <Award className="w-5 h-5 text-primary" />
             <span className="text-sm font-semibold text-primary">Professional Certifications</span>

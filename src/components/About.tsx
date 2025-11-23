@@ -1,7 +1,10 @@
 import { Code, Database, Brain, Sparkles, Zap, Target, TrendingUp, Users } from "lucide-react";
 import { Card } from "./ui/card";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const About = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+
   const highlights = [
     {
       icon: Brain,
@@ -39,7 +42,7 @@ const About = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className={`text-center mb-16 space-y-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-cyan-400/20 border border-primary/30 backdrop-blur-sm mb-4 animate-fade-in">
             <Sparkles className="w-5 h-5 text-primary animate-pulse" />
             <span className="text-sm font-medium">Software Engineer & AI Specialist</span>

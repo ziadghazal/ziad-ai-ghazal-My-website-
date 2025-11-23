@@ -2,15 +2,19 @@ import { ArrowRight, Sparkles, Mail, Brain, Zap, Code } from "lucide-react";
 import { Button } from "./ui/button";
 import ziadPhoto from "@/assets/ziad-photo.jpg";
 import aiBackground from "@/assets/ai-background.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Hero = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref as React.RefObject<HTMLElement>} className="relative min-h-screen flex items-center justify-center overflow-hidden"
+    >
       {/* AI Grid Background */}
       <div className="absolute inset-0 ai-grid" />
       
@@ -36,7 +40,8 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
           {/* Left Column - Text Content */}
-          <div className="text-center lg:text-left space-y-8">
+          <div className={`text-center lg:text-left space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+          >
             {/* AI Badge */}
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-cyan-400/20 border border-primary/30 backdrop-blur-sm animate-fade-in">
               <Brain className="w-5 h-5 text-primary animate-pulse" />

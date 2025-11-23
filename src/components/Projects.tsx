@@ -7,8 +7,10 @@ import projectPredictive from "@/assets/project-predictive.jpg";
 import projectForecasting from "@/assets/project-forecasting.jpg";
 import projectChatbot from "@/assets/project-chatbot.jpg";
 import projectFinancial from "@/assets/project-financial.jpg";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Projects = () => {
+  const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const projects = [
@@ -59,7 +61,7 @@ const Projects = () => {
       
       <div className="container mx-auto px-6 relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className={`text-center mb-16 space-y-4 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-primary/20 to-cyan-400/20 border border-primary/30 backdrop-blur-sm mb-4">
             <Brain className="w-5 h-5 text-primary animate-pulse" />
             <span className="text-sm font-medium">Real-World AI Solutions</span>

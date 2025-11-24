@@ -8,18 +8,34 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import AIAssistant from "@/components/AIAssistant";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import Navbar from "@/components/Navbar";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Navbar />
       <ThemeToggle />
-      <Hero />
-      <About />
-      <Experience />
-      <Projects />
-      <Skills />
-      <Certifications />
-      <Contact />
+      <div id="hero">
+        <Hero />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="experience">
+        <Experience />
+      </div>
+      <div id="projects">
+        <Projects />
+      </div>
+      <div id="skills">
+        <Skills />
+      </div>
+      <div id="certifications">
+        <Certifications />
+      </div>
+      <div id="contact">
+        <Contact />
+      </div>
       <Footer />
       <AIAssistant />
     </div>

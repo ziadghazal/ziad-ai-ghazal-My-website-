@@ -9,13 +9,13 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("");
 
   const navLinks = [
-    { name: "الرئيسية", href: "#hero" },
-    { name: "نبذة عني", href: "#about" },
-    { name: "الخبرات", href: "#experience" },
-    { name: "المشاريع", href: "#projects" },
-    { name: "المهارات", href: "#skills" },
-    { name: "الشهادات", href: "#certifications" },
-    { name: "تواصل معي", href: "#contact" },
+    { name: "Home", href: "#hero" },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
+    { name: "Certifications", href: "#certifications" },
+    { name: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
@@ -75,7 +75,7 @@ const Navbar = () => {
             }}
             className="text-2xl font-bold text-gradient"
           >
-            Ziad Lounici
+            Ziad Ghazal
           </a>
 
           {/* Desktop Navigation */}

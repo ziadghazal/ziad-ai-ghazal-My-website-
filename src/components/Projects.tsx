@@ -8,6 +8,7 @@ import projectForecasting from "@/assets/project-forecasting.jpg";
 import projectChatbot from "@/assets/project-chatbot.jpg";
 import projectFinancial from "@/assets/project-financial.jpg";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { ImageLoader } from "./ui/image-loader";
 
 const Projects = () => {
   const { ref, isVisible } = useScrollAnimation({ threshold: 0.2 });
@@ -90,12 +91,13 @@ const Projects = () => {
               >
                 {/* Project Image */}
                 <div className="relative h-56 overflow-hidden">
-                  <img 
+                  <ImageLoader
                     src={project.image} 
                     alt={project.title}
                     className={`w-full h-full object-cover transition-transform duration-700 ${
                       hoveredIndex === index ? 'scale-110' : 'scale-100'
                     }`}
+                    skeletonClassName="h-56"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/60 to-transparent" />
                   
